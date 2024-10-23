@@ -2,7 +2,7 @@
 
 ### licença e tecnologias utilizadas
 
-<img src="https://img.shields.io/github/license/henrygoncalvess/API_RESTful?style=for-the-badge&labelColor=gray&color=97ca00">
+<img src="https://img.shields.io/github/license/henrygoncalvess/JWT_auth?style=for-the-badge&labelColor=gray&color=97ca00">
 <!-- <img src="https://img.shields.io/badge/mysql-8.0.39-4479A1?style=for-the-badge&logo=mysql&logoColor=white&labelColor=gray">
 <img src="https://img.shields.io/badge/express-4.21.1-000000?style=for-the-badge&logo=express&logoColor=black&labelColor=gray">
 <img src="https://img.shields.io/badge/cors-2.8.5-royalblue?style=for-the-badge&logo=cors&logoColor=black&labelColor=gray">
