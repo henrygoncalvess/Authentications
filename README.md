@@ -2,21 +2,16 @@
 
 ### licença e tecnologias utilizadas
 
-<img src="https://img.shields.io/badge/github-1.1.1-000000?style=for-the-badge&logo=github&logoColor=black&labelColor=gray">
-
 <img src="https://img.shields.io/github/license/henrygoncalvess/API_RESTful?style=for-the-badge&labelColor=gray&color=97ca00">
-<img src="https://img.shields.io/badge/mysql-8.0.39-4479A1?style=for-the-badge&logo=mysql&logoColor=white&labelColor=gray">
+<!-- <img src="https://img.shields.io/badge/mysql-8.0.39-4479A1?style=for-the-badge&logo=mysql&logoColor=white&labelColor=gray">
 <img src="https://img.shields.io/badge/express-4.21.1-000000?style=for-the-badge&logo=express&logoColor=black&labelColor=gray">
 <img src="https://img.shields.io/badge/cors-2.8.5-royalblue?style=for-the-badge&logo=cors&logoColor=black&labelColor=gray">
 <img src="https://img.shields.io/badge/node-20.16.0-5FA04E?style=for-the-badge&logo=node.js&logoColor=5FA04E&labelColor=gray">
 <img src="https://img.shields.io/badge/npm-10.8.2-CB3837?style=for-the-badge&logo=npm&logoColor=CB3837&labelColor=gray">
 <img src="https://img.shields.io/badge/postman-11.16.0-FF6C37?style=for-the-badge&logo=postman&logoColor=FF6C37&labelColor=gray">
-<img src="https://img.shields.io/badge/dotenv-16.4.5-ECD53F?style=for-the-badge&logo=dotenv&logoColor=yellow&labelColor=gray">
+<img src="https://img.shields.io/badge/dotenv-16.4.5-ECD53F?style=for-the-badge&logo=dotenv&logoColor=yellow&labelColor=gray"> -->
 
-<!-- Descrição -->
-o que faz o app?
-com o que foi construido?
-por que foi feito?
+criando API com autenticação JWT
   
 <details open="open">
 <summary>Tabela de Conteúdos</summary>
@@ -27,29 +22,8 @@ por que foi feito?
   - [Etapas](#etapas)
 - [Instrução de uso](#instrução-de-uso)
 - [API Endpoints](#api-endpoints)
-- [Contribuição](#contribuição)
-- [GitFlow](#gitflow)
-- [Contribuidores](#contribuidores) <!-- ou Owners (donos) -->
   
 </details>
-
-<br>
-
-## Estrutura de pastas
-
-├──**CRUD_MySQL/**  
-│&nbsp; &nbsp; &nbsp;├──[src/](CRUD_MySQL/src)  
-│&nbsp; &nbsp; &nbsp;│&nbsp; &nbsp; &nbsp;├──[config/](CRUD_MySQL/src/config) _`conexão com banco de dados`_  
-│&nbsp; &nbsp; &nbsp;│&nbsp; &nbsp; &nbsp;│&nbsp; &nbsp; &nbsp; \`- - -[db.js](CRUD_MySQL/src/config/db.js)  
-│&nbsp; &nbsp; &nbsp;│&nbsp; &nbsp; &nbsp;├──[controllers/](CRUD_MySQL/src/controllers) _`lógica de negócio`_  
-│&nbsp; &nbsp; &nbsp;│&nbsp; &nbsp; &nbsp;│&nbsp; &nbsp; &nbsp; \`- - -[UserController.js](CRUD_MySQL/src/controllers/UserController.js)  
-│&nbsp; &nbsp; &nbsp;│&nbsp; &nbsp; &nbsp;├──[models/](CRUD_MySQL/src/models) _`modelos que lidam c/ banco de dados. consultas, manipulação etc.`_  
-│&nbsp; &nbsp; &nbsp;│&nbsp; &nbsp; &nbsp;│&nbsp; &nbsp; &nbsp; \`- - -[UserModel.js](CRUD_MySQL/src/models/db.js)  
-│&nbsp; &nbsp; &nbsp;│&nbsp; &nbsp; &nbsp;└──[routes/](CRUD_MySQL/src/routes) _`rotas da API`_  
-│&nbsp; &nbsp; &nbsp;│&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;\`- - -[Users.js](CRUD_MySQL/src/routes/users.js)  
-│&nbsp; &nbsp; &nbsp; \`- - -[app.js](CRUD_MySQL/src/app.js) _`lógica da aplicação`_  
-│&nbsp; &nbsp; &nbsp; \`- - -[server.js](CRUD_MySQL/src/server.js) _`ponto de entrada da aplicação`_  
-\`- - - ~~.env~~ _`configs de ambiente`_  
 
 <br>
 
@@ -60,7 +34,7 @@ No Terminal, certifique de que você está na pasta onde vai ficar o repositóri
 
 ```repositorios\clonados```
 ``` bash
-git clone https://github.com/henrygoncalvess/CRUD_MySQL.git
+git clone https://github.com/henrygoncalvess/JWT_auth.git
 ```
 
 <br>
@@ -88,14 +62,14 @@ Para fazer requisições e testar a conexão com o banco:
 
 #### 1. crie seu projeto Node.js
 
-`repositorios\clonados\CRUD_MySQL`
+`repositorios\clonados\JWT_auth`
 ``` bash
 npm init
 ```
 
 #### 2. em seguida, instale as dependências necessárias para o funcionamento do projeto.
 
-`repositorios\clonados\CRUD_MySQL`
+`repositorios\clonados\JWT_auth`
 ``` bash
 npm install cors@4.24.1 mysql2@3.11.3 dotenv@16.4.5 express@4.21.1
 ```
@@ -116,7 +90,7 @@ TABLE=sua_tabela
 
 Inicie o servidor local e veja [API Endpoints](#api-endpoints) para testar as respostas da api
 
-`repositorios\clonados\CRUD_MySQL\src`
+`repositorios\clonados\JWT_auth\src`
 ``` bash
 node server.js
 ```
