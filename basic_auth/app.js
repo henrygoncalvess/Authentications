@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express()
 
+// Middleware para autenticação básica
 function basicAuth(req, res, next){
     // captura o header com o valor de 'authoritation'
     const authHeader = req.headers['authorization']
