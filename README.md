@@ -1,4 +1,4 @@
-# API com JWT
+# API com Basic Authentication, Bearer e JWT. 
 
 ### licença e tecnologias utilizadas
 
@@ -11,7 +11,7 @@
 <img src="https://img.shields.io/badge/postman-11.16.0-FF6C37?style=for-the-badge&logo=postman&logoColor=FF6C37&labelColor=gray">
 <img src="https://img.shields.io/badge/dotenv-16.4.5-ECD53F?style=for-the-badge&logo=dotenv&logoColor=yellow&labelColor=gray"> -->
 
-criando API com autenticação JWT
+criando API com diferentes autenticações
   
 <details open="open">
 <summary>Tabela de Conteúdos</summary>
@@ -34,7 +34,7 @@ No Terminal, certifique de que você está na pasta onde vai ficar o repositóri
 
 ```repositorios\clonados```
 ``` bash
-git clone https://github.com/henrygoncalvess/JWT_auth.git
+git clone https://github.com/henrygoncalvess/API_auth.git
 ```
 
 <br>
@@ -62,14 +62,14 @@ Para fazer requisições e testar a conexão com o banco:
 
 #### 1. crie seu projeto Node.js
 
-`repositorios\clonados\JWT_auth`
+`repositorios\clonados\API_auth`
 ``` bash
 npm init
 ```
 
 #### 2. em seguida, instale as dependências necessárias para o funcionamento do projeto.
 
-`repositorios\clonados\JWT_auth`
+`repositorios\clonados\API_auth`
 ``` bash
 npm install cors@4.24.1 mysql2@3.11.3 dotenv@16.4.5 express@4.21.1
 ```
@@ -90,7 +90,7 @@ TABLE=sua_tabela
 
 Inicie o servidor local e veja [API Endpoints](#api-endpoints) para testar as respostas da api
 
-`repositorios\clonados\JWT_auth\src`
+`repositorios\clonados\API_auth\src`
 ``` bash
 node server.js
 ```
