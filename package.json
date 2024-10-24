@@ -1,9 +1,0 @@
-{
-  "dependencies": {
-    "express": "^4.21.1"
-  },
-  "scripts": {
-    "start-b": "node --watch basic_auth/server.js",
-    "start-j": "node --watch jwt_auth/server.js"
-  }
-}
