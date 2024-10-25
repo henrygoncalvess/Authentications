@@ -20,6 +20,10 @@ Contém informações do tipo: como funciona, para que serve, quando usá-la e q
   - [Pré-requisitos](#pré-requisitos)
   - [Etapas](#etapas)
 - [Instrução de uso](#instrução-de-uso)
+  - Basic Auth - [Documentação](basic_auth.md)
+  - API Key Auth - [Documentação](api-key_auth.md)
+  - Token Auth - [Documentação](token_auth.md)
+  - JWT Auth - [Documentação](jwt_auth.md)
   
 </details>
 
@@ -28,14 +32,14 @@ Contém informações do tipo: como funciona, para que serve, quando usá-la e q
 ## Estrutura de pastas
 
 ├──**Authentications/**  
-│&nbsp; &nbsp; &nbsp;├──[basic_auth/](basic_auth)  
-│&nbsp; &nbsp; &nbsp;│&nbsp; &nbsp; &nbsp; \`- - -[server.js](basic_auth/server.js)  
-│&nbsp; &nbsp; &nbsp;├──[api-key_auth/](api-key_auth)  
-│&nbsp; &nbsp; &nbsp;│&nbsp; &nbsp; &nbsp; \`- - -[server.js](basic_auth/server.js)  
-│&nbsp; &nbsp; &nbsp;├──[token_auth/](token_auth)  
-│&nbsp; &nbsp; &nbsp;│&nbsp; &nbsp; &nbsp; \`- - -[server.js](basic_auth/server.js)  
-│&nbsp; &nbsp; &nbsp;├──[jwt_auth/](jwt_auth)  
-│&nbsp; &nbsp; &nbsp;│&nbsp; &nbsp; &nbsp; \`- - -[server.js](basic_auth/server.js)  
+&nbsp; &nbsp; &nbsp; &nbsp;├──[basic_auth/](basic_auth)  
+&nbsp; &nbsp; &nbsp; &nbsp;│&nbsp; &nbsp; &nbsp; \`- - -[app.js](basic_auth/app.js)  
+&nbsp; &nbsp; &nbsp; &nbsp;├──[api-key_auth/](api-key_auth)  
+&nbsp; &nbsp; &nbsp; &nbsp;│&nbsp; &nbsp; &nbsp; \`- - -[app.js](api-key_auth/app.js)  
+&nbsp; &nbsp; &nbsp; &nbsp;├──[token_auth/](token_auth)  
+&nbsp; &nbsp; &nbsp; &nbsp;│&nbsp; &nbsp; &nbsp; \`- - -[app.js](token_auth/app.js)  
+&nbsp; &nbsp; &nbsp; &nbsp;└──[jwt_auth/](jwt_auth)  
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; \`- - -[app.js](jwt_auth/app.js)  
 
 <br>
 
@@ -93,3 +97,8 @@ Inicie o servidor local
 ``` bash
 node server.js
 ```
+
+- Basic Auth - [Documentação](basic_auth/basic_auth.md)
+- API Key Auth - [Documentação](api-key_auth/api-key_auth.md)
+- Token Auth - [Documentação](token_auth/token_auth.md)
+- JWT Auth - [Documentação](jwt_auth/jwt_auth.md)
