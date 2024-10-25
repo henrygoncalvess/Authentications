@@ -1,29 +1,29 @@
-# API com Basic Authentication, Bearer e JWT. 
+# Entendendo autorização e autenticação
 
 ### licença e tecnologias utilizadas
 
-<img src="https://img.shields.io/github/license/henrygoncalvess/JWT_auth?style=for-the-badge&labelColor=gray&color=97ca00"> <img src="https://img.shields.io/badge/express-4.21.1-000000?style=for-the-badge&logo=express&logoColor=black&labelColor=gray">
-<!-- <img src="https://img.shields.io/badge/cors-2.8.5-royalblue?style=for-the-badge&logo=cors&logoColor=black&labelColor=gray"> -->
-<!-- <img src="https://img.shields.io/badge/node-20.16.0-5FA04E?style=for-the-badge&logo=node.js&logoColor=5FA04E&labelColor=gray"> -->
-<!-- <img src="https://img.shields.io/badge/npm-10.8.2-CB3837?style=for-the-badge&logo=npm&logoColor=CB3837&labelColor=gray"> -->
-<!-- <img src="https://img.shields.io/badge/postman-11.16.0-FF6C37?style=for-the-badge&logo=postman&logoColor=FF6C37&labelColor=gray"> -->
-<!-- <img src="https://img.shields.io/badge/dotenv-16.4.5-ECD53F?style=for-the-badge&logo=dotenv&logoColor=yellow&labelColor=gray"> -->
+<img src="https://img.shields.io/github/license/henrygoncalvess/JWT_auth?style=for-the-badge&labelColor=gray&color=97ca00"> <a href="https://expressjs.com/pt-br/"><img src="https://img.shields.io/badge/express-4.21.1-000000?style=for-the-badge&logo=express&logoColor=black&labelColor=gray"></a>
 
-Documentação simples das diferentes formas de autenticações.  
-Contém informações do tipo: como funciona, para que serve, quando usá-la e quais são as limitações.
+Documentação simples das diferentes formas de autenticação.
+
+Contém informações do tipo:
+- como funciona
+- para que serve?
+- quando usá-las e quais são as limitações.
   
 <details open="open">
 <summary>Tabela de Conteúdos</summary>
   
 - [Instrução de instalação](#instrução-de-instalação)
-  - [Clonando Repositório](#clonando-repositório)
   - [Pré-requisitos](#pré-requisitos)
+  - [Clonando Repositório](#clonando-repositório)
   - [Etapas](#etapas)
 - [Instrução de uso](#instrução-de-uso)
-  - Basic Auth - [Documentação](basic_auth.md)
-  - API Key Auth - [Documentação](api-key_auth.md)
-  - Token Auth - [Documentação](token_auth.md)
-  - JWT Auth - [Documentação](jwt_auth.md)
+  - Basic Auth
+  - API Key Auth
+  - Token Auth
+  - JWT Auth
+- [Resumo sobre as diferentes formas de autenticação](#resumo)
   
 </details>
 
@@ -45,16 +45,6 @@ Contém informações do tipo: como funciona, para que serve, quando usá-la e q
 
 ## Instrução de instalação
 
-### Clonando Repositório
-No Terminal, certifique de que você está na pasta onde vai ficar o repositório
-
-```repositorios\clonados```
-``` bash
-git clone https://github.com/henrygoncalvess/Authentications.git
-```
-
-<br>
-
 ### Pré-requisitos
 Para a instalação dos frameworks, middlewares e dependências é necessário que você possua as seguintes ferramentas:
 
@@ -68,6 +58,16 @@ Para fazer requisições e testar as autenticações:
 > [!tip]
 > Também é possível fazer requisições pela linha de comando.  
 [Clique aqui](https://www.campuscode.com.br/conteudos/comandos-curl-para-testar-requisicoes-api) para aprender a fazer requisições pelo terminal
+
+<br>
+
+### Clonando Repositório
+No Terminal, certifique de que você está na pasta onde vai ficar o repositório
+
+```repositorios\clonados```
+``` bash
+git clone https://github.com/henrygoncalvess/Authentications.git
+```
 
 <br>
 
@@ -91,14 +91,29 @@ npm install express@4.21.1
 
 ## Instrução de uso
 
-Inicie o servidor local  
-
-`repositorios\clonados\Authentications`
-``` bash
-node server.js
-```
+Veja a documentação das diferentes formas de autenticação para realizar os testes com requisições
 
 - Basic Auth - [Documentação](basic_auth/basic_auth.md)
 - API Key Auth - [Documentação](api-key_auth/api-key_auth.md)
 - Token Auth - [Documentação](token_auth/token_auth.md)
 - JWT Auth - [Documentação](jwt_auth/jwt_auth.md)
+
+<br>
+
+## <a name="resumo">Resumo sobre as diferentes formas de autenticação</a>
+
+Todos os métodos (exceto a autenticação com JWT) compartilham os seguintes aspectos em comum:
+
+- **Envio de credenciais ou identificadores:**  
+Seja um usuário e senha (`Basic Auth`), uma chave única (`API-Key Auth`) ou um token (`Token Auth`),
+todos possuem o envio de uma identificação que valida a requisição.
+
+- **Inclusão no Header da Requisição:**  
+Todos são geralmente enviados no Header da requisição, em campos como `Authorization` (Basic e Bearer Tokens)
+ou em um cabeçalho customizado no caso da API Key.
+
+- **Validação no Servidor:**  
+Ao receber a requisição, o servidor verifica as credenciais para decidir se autoriza ou nega o acesso aos recursos.
+
+- **Controle de Acesso:**  
+Se a validação for bem-sucedida, o servidor segue com o processamento da requisição e então responde.
