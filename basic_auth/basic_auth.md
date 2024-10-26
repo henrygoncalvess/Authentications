@@ -44,6 +44,19 @@ app.listen(3000, () => {
 
 <br>
 
+## Instrução de uso
+
+Inicie o servidor local
+
+`repositorios\clonados\Authentications\basic_auth`
+``` bash
+node server.js
+```
+
+teste as respostas da autenticação seguindo o **endpoint** abaixo.
+
+<br>
+
 Rota | Descrição
 --- | :---:
 ***GET*** ` http://localhost:3000/basic-auth ` | autentica o usuário se o nome e senha codificados estiverem corretos
