@@ -19,10 +19,10 @@ Contém informações do tipo:
   - [Clonando Repositório](#clonando-repositório)
   - [Etapas](#etapas)
 - [Instrução de uso](#instrução-de-uso)
-  - Basic Auth
-  - API Key Auth
-  - Token Auth
-  - JWT Auth
+  - [Basic Auth](basic_auth/basic_auth.md)
+  - [API Key Auth](api-key_auth/api-key_auth.md)
+  - [Token Auth](token_auth/token_auth.md)
+  - [JWT Auth](jwt_auth/jwt_auth.md)
 - [Resumo sobre as diferentes formas de autenticação](#resumo)
   
 </details>
