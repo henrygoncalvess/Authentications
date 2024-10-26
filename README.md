@@ -21,7 +21,6 @@ Contém informações do tipo:
 - [Instrução de uso](#instrução-de-uso)
   - [Basic Auth](basic_auth/basic_auth.md)
   - [API Key Auth](api-key_auth/api-key_auth.md)
-  - [Token Auth](token_auth/token_auth.md)
   - [JWT Auth](jwt_auth/jwt_auth.md)
 - [Resumo sobre as diferentes formas de autenticação](#resumo)
   
@@ -81,7 +80,6 @@ Veja a documentação das diferentes formas de autenticação para realizar os t
 
 - Basic Auth - [Documentação](basic_auth/basic_auth.md)
 - API Key Auth - [Documentação](api-key_auth/api-key_auth.md)
-- Token Auth - [Documentação](token_auth/token_auth.md)
 - JWT Auth - [Documentação](jwt_auth/jwt_auth.md)
 
 <br>
