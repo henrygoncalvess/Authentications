@@ -50,7 +50,7 @@ Inicie o servidor local
 
 `repositorios\clonados\Authentications\basic_auth`
 ``` bash
-node server.js
+node app.js
 ```
 
 teste as respostas da autenticação seguindo o **endpoint** abaixo.

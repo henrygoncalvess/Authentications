@@ -52,6 +52,19 @@ app.listen(3000, () => {
 
 <br>
 
+## Instrução de uso
+
+Inicie o servidor local
+
+`repositorios\clonados\Authentications\api-key_auth`
+``` bash
+node app.js
+```
+
+teste as respostas da autenticação seguindo o **endpoint** abaixo.
+
+<br>
+
 Rota | Descrição
 --- | :---:
 ***GET*** ` http://localhost:3000/api-key ` | autentica o usuário se a chave api estiver correta
