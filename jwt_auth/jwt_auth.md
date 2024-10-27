@@ -9,9 +9,11 @@
   - [POST/register](#post-register)
   - [POST/login](#post-login)
   - [GET - Response](#get)
+- [Considerações](#considerações)
   
 </details>
 
+<br>
 <br>
 
 <a name="app">`app.js`</a>
@@ -33,8 +35,8 @@ app.use(express.json())
 app.use(cors())
 
 // aplicando rotas
-app.use('/api', loginRoutes)
-app.use('/api', registerRoutes)
+app.use('/auth', loginRoutes)
+app.use('/auth', registerRoutes)
 
 // aplicando middleware de verificação do token
 app.get('/dashboard', authMiddleware, (req, res) => {
@@ -49,6 +51,7 @@ app.listen(3000, () => {
 })
 ```
 
+<br>
 <br>
 
 <a name="register">`routes/register.js`</a>
@@ -91,6 +94,7 @@ module.exports = { registerRoutes, users }
 ```
 
 <br>
+<br>
 
 <a name="login">`routes/login.js`</a>
 ``` javascript
@@ -125,12 +129,15 @@ router.post('/login', async (req, res) => {
 
     // cria um token se estiver correta
     const token = jwt.sign({ username }, 'secretKey')
-    res.status(200).json(token)
+    res.status(200).json({
+        token: token
+    })
 })
 
 module.exports = router
 ```
 
+<br>
 <br>
 
 <a name="middle">`middlewares/auth.js`</a>
@@ -168,6 +175,7 @@ module.exports = authToken
 ```
 
 <br>
+<br>
 
 ## Instrução de uso
 
@@ -180,6 +188,7 @@ node app.js
 
 teste as respostas da autenticação seguindo o **endpoint** abaixo.
 
+<br>
 <br>
 
 Rota | Descrição
@@ -205,6 +214,7 @@ message: usuário registrado com sucesso
 ```
 
 <br>
+<br>
 
 ### <a name="post-login">POST/login - ***Request***</a>
 
@@ -228,6 +238,7 @@ HTTP STATUS: 200
 ```
 
 <br>
+<br>
 
 ### <a name="get">GET - ***Request***</a>
 
@@ -244,29 +255,40 @@ HTTP STATUS: 200
 Bem Vindo Jonh Doe
 ```
 
-
+<br>
 <br>
 
 ### Considerações
 
-Basic Authentication (`Basic Auth`) é um método simples de autenticação HTTP que requer o envio de credenciais  
-(_normalmente nome de usuário e senha_) **codificadas em Base64** no Header da requisição.  
-Essas credenciais são enviadas em todas as requisições para verificar a identidade do cliente.
+JWT é um padrão aberto usado para transmitir informações de forma compacta e segura entre duas partes,  
+normalmente um cliente e um servidor. Ele consiste em três partes:
+
+1. **Header:** Indica o tipo de token (JWT) e o algoritmo de criptografia usado (ex: HMAC, SHA256).
+2. **Payload:** Contém as informações a serem transmitidas, como o ID do usuário, permissões,  
+ou qualquer dado relevante para a aplicação.
+3. **Signature:** Uma assinatura criptográfica que garante que o conteúdo do token não foi alterado.  
+É gerada combinando o header e o payload com uma chave secreta.
+
+Após a criação, o JWT é enviado ao cliente, geralmente nos cabeçalhos das respostas HTTP.  
+O cliente armazena o token (em cookies ou localStorage) e o inclui em requisições subsequentes.
 
 #### Fluxo de Autenticação
-1. **Requisição inicial:** O cliente faz uma requisição HTTP e envia as credenciais no Header `Authorization`.  
-2. **Verificação das credenciais:** O servidor verifica se as credenciais fornecidas são válidas.  
-3. **Resposta do servidor:**
+1. **Login:** O cliente envia suas credenciais para o servidor (ex: e-mail e senha).
+2. **Geração do Token:** O servidor valida as credenciais e, se forem válidas, gera um JWT, que é devolvido ao cliente.
+3. **Armazenamento:** O cliente armazena o token.
+4. **Autenticação de Requisição:** A cada requisição subsequente, o cliente envia o JWT  
+(tipicamente no header "Authorization: Bearer <token>").
+5. **Validação no Servidor:** O servidor valida o token e, se for válido, processa a requisição.  
     - *200 OK:* Se as credenciais estiverem corretas, o servidor responde com o recurso solicitado.
     - *401 Unauthorized:* Se as credenciais estiverem incorretas ou ausentes, o servidor retorna um status 401.
 
 #### Quando usar?
-- API simples
-- Autenticação temporária
+- **APIs RESTful:** JWT é amplamente usado em APIs RESTful para autenticação e autorização.
+- **Aplicações que requerem autenticação sem estado:** Como o token é auto-contido, o servidor  
+não precisa armazenar o estado de autenticação, o que é útil para escalabilidade.
 
 #### Limitações
-- **Transmissão dos dados:** Tanto API Keys quanto Basic Auth são inseguros se transmitidos sem HTTPS,  
-pois os dados podem ser facilmente interceptados e usados por um atacante.
-- **Dificuldade de revogação:** Não é fácil revogar ou rotacionar credenciais sem exigir que o usuário altere a senha.
-- **Não oferece autorização:** Basic Auth é apenas um mecanismo de autenticação,  
-ele não lida com permissões e controle de acesso.
+- **Expiração e Revogação de Tokens:** Tokens são válidos até expirarem, o que dificulta a revogação  
+- em tempo real. Se o token for comprometido antes de expirar, ele ainda poderá ser usado.
+- **Tamanho do Token:** Como o JWT contém a assinatura e o payload codificado,  
+ele pode ser maior do que um simples ID de sessão.
