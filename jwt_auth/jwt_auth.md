@@ -231,6 +231,7 @@ message: usuário registrado com sucesso
 HTTP STATUS: 200
 ```
 
+OBS: `copiar token`
 ``` json
 {
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkpvbmggRG9lIiwiaWF0IjoxNzMwMDA3ODA3fQ.-lgRBmS5LyS7Z3H1lSa-31Vum_jAWEP2sOJucYHBw6g"
