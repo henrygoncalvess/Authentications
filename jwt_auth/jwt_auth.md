@@ -186,7 +186,7 @@ Rota | Descrição
 --- | :---:
 ***POST*** ` http://localhost:3000/auth/register ` | rota para registrar as informações do usuário - [ver JSON](#post-register)
 ***POST*** ` http://localhost:3000/auth/login ` | rota para logar o usuário e criar o token - [ver JSON](#post-login)
-***GET*** ` http://localhost:3000/dashboard ` | verifica a autorização do usuário através do token e libera o acesso, se for válido - [ver JSON](#get---response)
+***GET*** ` http://localhost:3000/dashboard ` | verifica a autorização do usuário através do token e libera o acesso, se for válido - [ver JSON](#get)
 
 ### <a name="post-register">POST/register - ***Request***</a>
 
@@ -229,11 +229,21 @@ HTTP STATUS: 200
 
 <br>
 
-### <a name="get">GET - ***Response***</a>
+### <a name="get">GET - ***Request***</a>
+
+`header`
+``` json
+{
+    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkpvbmggRG9lIiwiaWF0IjoxNzMwMDA3ODA3fQ.-lgRBmS5LyS7Z3H1lSa-31Vum_jAWEP2sOJucYHBw6g"
+}
+```
+
+***Response***
 
 ``` console
 Bem Vindo Jonh Doe
 ```
+
 
 <br>
 
