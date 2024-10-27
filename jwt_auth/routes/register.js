@@ -2,8 +2,10 @@ const express = require('express')
 const bcrypt = require('bcryptjs')
 const registerRoutes = express.Router()
 
+// armazenando as credenciais do usuário em memória (por simplicidade)
 const users = []
 
+// rota para registrar as informações do usuário
 registerRoutes.post('/register', async (req, res) => {
     const { username, password } = req.body
 

@@ -5,6 +5,7 @@ const { users } = require('./register.js')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 
+// rota para logar o usuário e criar o token
 router.post('/login', async (req, res) => {
     const { username, password } = req.body
 
@@ -15,7 +16,7 @@ router.post('/login', async (req, res) => {
 
     // verifica se ele ainda não se registrou
     if (!userExists){
-        res.status(400).send('usuário não encontrado')
+        res.status(400).send('usuário não registrado')
     }
 
     // compara a senha atual com a senha encriptada
