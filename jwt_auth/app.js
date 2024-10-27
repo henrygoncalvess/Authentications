@@ -15,8 +15,8 @@ app.use(express.json())
 app.use(cors())
 
 // aplicando rotas
-app.use('/api', loginRoutes)
-app.use('/api', registerRoutes)
+app.use('/auth', loginRoutes)
+app.use('/auth', registerRoutes)
 
 // aplicando middleware de verificação do token
 app.get('/dashboard', authMiddleware, (req, res) => {

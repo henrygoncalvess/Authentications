@@ -29,7 +29,9 @@ router.post('/login', async (req, res) => {
 
     // cria um token se estiver correta
     const token = jwt.sign({ username }, 'secretKey')
-    res.status(200).json(token)
+    res.status(200).json({
+        token: token
+    })
 })
 
 module.exports = router
