@@ -96,30 +96,49 @@ sequenceDiagram
     actor c as Cliente
     participant s as Servidor
 
-    c ->>+ s: REGISTRO: nome e senha
-    alt já registrado ¨ ¨
-    s -->>+ c: msg: erro
+    c ->> s: REGISTRO: nome e senha
+    activate s
+    alt já registrado
+    s -->> c: msg: erro
+    deactivate s
     else não registrado
     s ->> s: criação do hash da senha
+    activate s
     s ->> s: armazenação do nome e senha
-    s -->>- c: msg: usuário registrado
+    s -->> c: msg: usuário registrado
+    deactivate s
     end
-    c ->>+ s: LOGIN: nome e senha
+    c ->> s: LOGIN: nome e senha
+    activate s
     alt já registrado
     s -->> c: msg de erro
+    deactivate s
     else não registrado
     s ->> s: criação do token JWT
-    s -->>- c: envio do token
+    activate s
+    s -->> c: envio do token
+    deactivate s
     end
-
+    c ->> c: armazena o token - local storage / session
+    activate c
+    c ->> s: acessa a rota protegida enviando o token JWT
+    deactivate c
+    activate s
     create participant m as Middleware
-    c ->>+ m: acessa a rota protegida enviando o token JWT
-    m ->> m: verificação do token JWT
+    s ->> m: verificação do token JWT
+    deactivate s
+    activate m
     alt se o token não é válido
-    m -->> c: msg: acesso negado
+    m -->> c: acesso negado
+    deactivate m
+    activate m
     else se o token é válido
-    m -->>- c: msg: acesso permitido
+    m -->> s: token decriptado/acesso permitido
+    deactivate m
+    activate s
     end
+    s -->> c: conteúdo da rota
+    deactivate s
 ```
 
 <br>
