@@ -2,7 +2,7 @@
 
 ### licença e tecnologias utilizadas
 
-<img src="https://img.shields.io/github/license/henrygoncalvess/JWT_auth?style=for-the-badge&labelColor=gray&color=97ca00"> <a href="https://expressjs.com/pt-br/"><img src="https://img.shields.io/badge/express-4.21.1-000000?style=for-the-badge&logo=express&logoColor=black&labelColor=gray"></a> <a href="https://jwt.io/"><img src="https://img.shields.io/badge/jwt-9.0.2-FD3456?style=for-the-badge&logo=jsonwebtokens&logoColor=black&labelColor=white"></a> <a href="https://github.com/henrygoncalvess"><img src="https://img.shields.io/badge/bcrypt-2.4.3-003A70?style=for-the-badge&logo=letsencrypt&logoColor=darkblue&labelColor=gray"></a> <a href="https://www.npmjs.com/package/cors"><img src="https://img.shields.io/badge/cors-2.8.5-royalblue?style=for-the-badge&logo=cors&logoColor=black&labelColor=gray"></a>
+<img src="https://img.shields.io/github/license/henrygoncalvess/Authentications?style=for-the-badge&labelColor=gray&color=97ca00"> <a href="https://expressjs.com/pt-br/"><img src="https://img.shields.io/badge/express-4.21.1-000000?style=for-the-badge&logo=express&logoColor=black&labelColor=gray"></a> <a href="https://jwt.io/"><img src="https://img.shields.io/badge/jwt-9.0.2-FD3456?style=for-the-badge&logo=jsonwebtokens&logoColor=black&labelColor=white"></a> <a href="https://github.com/henrygoncalvess"><img src="https://img.shields.io/badge/bcrypt-2.4.3-003A70?style=for-the-badge&logo=letsencrypt&logoColor=darkblue&labelColor=gray"></a> <a href="https://www.npmjs.com/package/cors"><img src="https://img.shields.io/badge/cors-2.8.5-royalblue?style=for-the-badge&logo=cors&logoColor=black&labelColor=gray"></a>
 
 Documentação simples das diferentes formas de autenticação.
 
@@ -22,6 +22,7 @@ Contém informações do tipo:
   - [Basic Auth](basic_auth/basic_auth.md)
   - [API Key Auth](api-key_auth/api-key_auth.md)
   - [JWT Auth](jwt_auth/jwt_auth.md)
+- [Pequena introdução a JWT](#intro)
 - [Resumo sobre as diferentes formas de autenticação](#resumo)
   
 </details>
@@ -81,6 +82,45 @@ Veja a documentação das diferentes formas de autenticação para realizar os t
 - Basic Auth - [Documentação](basic_auth/basic_auth.md)
 - API Key Auth - [Documentação](api-key_auth/api-key_auth.md)
 - JWT Auth - [Documentação](jwt_auth/jwt_auth.md)
+
+<br>
+
+## <a name="intro">Pequena introdução a JWT</a>
+
+``` mermaid
+---
+title: Fluxo de Autenticação
+---
+sequenceDiagram
+    autonumber
+    actor c as Cliente
+    participant s as Servidor
+
+    c ->>+ s: REGISTRO: nome e senha
+    alt já registrado ¨ ¨
+    s -->>+ c: msg: erro
+    else não registrado
+    s ->> s: criação do hash da senha
+    s ->> s: armazenação do nome e senha
+    s -->>- c: msg: usuário registrado
+    end
+    c ->>+ s: LOGIN: nome e senha
+    alt já registrado
+    s -->> c: msg de erro
+    else não registrado
+    s ->> s: criação do token JWT
+    s -->>- c: envio do token
+    end
+
+    create participant m as Middleware
+    c ->>+ m: acessa a rota protegida enviando o token JWT
+    m ->> m: verificação do token JWT
+    alt se o token não é válido
+    m -->> c: msg: acesso negado
+    else se o token é válido
+    m -->>- c: msg: acesso permitido
+    end
+```
 
 <br>
 
