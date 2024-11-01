@@ -2,7 +2,7 @@
 
 ### licença e tecnologias utilizadas
 
-<img src="https://img.shields.io/github/license/henrygoncalvess/Authentications?style=for-the-badge&labelColor=gray&color=97ca00"> <a href="https://expressjs.com/pt-br/"><img src="https://img.shields.io/badge/express-4.21.1-000000?style=for-the-badge&logo=express&logoColor=black&labelColor=gray"></a> <a href="https://jwt.io/"><img src="https://img.shields.io/badge/jwt-9.0.2-FD3456?style=for-the-badge&logo=jsonwebtokens&logoColor=black&labelColor=white"></a> <a href="https://github.com/henrygoncalvess"><img src="https://img.shields.io/badge/bcrypt-2.4.3-003A70?style=for-the-badge&logo=letsencrypt&logoColor=darkblue&labelColor=gray"></a> <a href="https://www.npmjs.com/package/cors"><img src="https://img.shields.io/badge/cors-2.8.5-royalblue?style=for-the-badge&logo=cors&logoColor=black&labelColor=gray"></a>
+<img src="https://img.shields.io/github/license/henrygoncalvess/Authentications?style=for-the-badge&labelColor=gray&color=97ca00"> <a href="https://expressjs.com/pt-br/"><img src="https://img.shields.io/badge/express-4.21.1-000000?style=for-the-badge&logo=express&logoColor=black&labelColor=gray"></a> <a href="https://jwt.io/"><img src="https://img.shields.io/badge/jwt-9.0.2-FD3456?style=for-the-badge&logo=jsonwebtokens&logoColor=black&labelColor=white"></a> <a href="https://www.npmjs.com/package/bcrypt"><img src="https://img.shields.io/badge/bcrypt-2.4.3-003A70?style=for-the-badge&logo=letsencrypt&logoColor=darkblue&labelColor=gray"></a> <a href="https://www.npmjs.com/package/cors"><img src="https://img.shields.io/badge/cors-2.8.5-royalblue?style=for-the-badge&logo=cors&logoColor=black&labelColor=gray"></a>
 
 Documentação simples das diferentes formas de autenticação.
 
