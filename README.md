@@ -1,15 +1,30 @@
 # Entendendo autorização e autenticação
 
-### licença e tecnologias utilizadas
-
-<img src="https://img.shields.io/github/license/henrygoncalvess/Authentications?style=for-the-badge&labelColor=gray&color=97ca00"> <a href="https://expressjs.com/pt-br/"><img src="https://img.shields.io/badge/express-4.21.1-000000?style=for-the-badge&logo=express&logoColor=black&labelColor=gray"></a> <a href="https://jwt.io/"><img src="https://img.shields.io/badge/jwt-9.0.2-FD3456?style=for-the-badge&logo=jsonwebtokens&logoColor=black&labelColor=white"></a> <a href="https://www.npmjs.com/package/bcrypt"><img src="https://img.shields.io/badge/bcrypt-2.4.3-003A70?style=for-the-badge&logo=letsencrypt&logoColor=darkblue&labelColor=gray"></a> <a href="https://www.npmjs.com/package/cors"><img src="https://img.shields.io/badge/cors-2.8.5-royalblue?style=for-the-badge&logo=cors&logoColor=black&labelColor=gray"></a>
-
 Documentação simples das diferentes formas de autenticação.
 
 Contém informações do tipo:
 - como funciona
 - para que serve?
 - quando usá-las e quais são as limitações.
+
+
+<br>
+
+**licença e tecnologias utilizadas**:  
+<img src="https://img.shields.io/github/license/henrygoncalvess/Authentications?style=for-the-badge&labelColor=gray&color=97ca00"> <a href="https://expressjs.com/pt-br/"><img src="https://img.shields.io/badge/express-4.21.1-000000?style=for-the-badge&logo=express&logoColor=black&labelColor=gray"></a> <a href="https://jwt.io/"><img src="https://img.shields.io/badge/jwt-9.0.2-FD3456?style=for-the-badge&logo=jsonwebtokens&logoColor=black&labelColor=white"></a> <a href="https://www.npmjs.com/package/bcrypt"><img src="https://img.shields.io/badge/bcrypt-2.4.3-003A70?style=for-the-badge&logo=letsencrypt&logoColor=darkblue&labelColor=gray"></a> <a href="https://www.npmjs.com/package/cors"><img src="https://img.shields.io/badge/cors-2.8.5-royalblue?style=for-the-badge&logo=cors&logoColor=black&labelColor=gray"></a> <a href="https://nodejs.org/pt"><img src="https://img.shields.io/badge/node-20.16.0-5FA04E?style=for-the-badge&logo=node.js&logoColor=5FA04E&labelColor=gray"></a> <a href="https://learning.postman.com/docs/introduction/overview/"><img src="https://img.shields.io/badge/postman-11.16.0-FF6C37?style=for-the-badge&logo=postman&logoColor=FF6C37&labelColor=gray"></a>
+
+**Insalador de pacotes**:  
+<a href="https://docs.npmjs.com"><img src="https://img.shields.io/badge/npm-10.8.2-CB3837?style=for-the-badge&logo=npm&logoColor=CB3837&labelColor=gray"></a>
+
+**Ponto de Entrada**:  
+<span><img src="https://img.shields.io/badge/app.js-333333?style=for-the-badge"></span>
+
+**Caminho**:  
+<span><img src="https://img.shields.io/badge/api--key__auth/app.js-333333?style=for-the-badge"></span>, 
+<span><img src="https://img.shields.io/badge/basic__auth/app.js-333333?style=for-the-badge"></span>, 
+<span><img src="https://img.shields.io/badge/jwt__auth/app.js-333333?style=for-the-badge"></span>
+
+<br>
   
 <details open="open">
 <summary>Tabela de Conteúdos</summary>
