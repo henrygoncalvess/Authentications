@@ -32,7 +32,7 @@ Contém informações do tipo:
 - [Instrução de instalação](#instrução-de-instalação)
   - [Pré-requisitos](#pré-requisitos)
   - [Clonando Repositório](#clonando-repositório)
-  - [Etapas](#etapas)
+  - [Configuração do Projeto](#configuração-do-projeto)
 - [Instrução de uso](#instrução-de-uso)
   - [Basic Auth](basic_auth/basic_auth.md)
   - [API Key Auth](api-key_auth/api-key_auth.md)
@@ -49,12 +49,12 @@ Contém informações do tipo:
 ### Pré-requisitos
 Para a instalação dos frameworks, middlewares e dependências é necessário que você possua as seguintes ferramentas:
 
-- **Node.js** - [Tutorial de instalação](https://nodejs.org/pt)
+- <img src="https://cdn.simpleicons.org/nodedotjs/5FA04E/5FA04E?viewbox=auto" width=24>&nbsp; **Node.js** - [Tutorial de instalação](https://nodejs.org/pt)
 
-- **npm** - [Tutorial de instalação](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+- <img src="https://cdn.simpleicons.org/npm/CB3837/CB3837?viewbox=auto" width=24>&nbsp; **npm** - [Tutorial de instalação](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 
 Para fazer requisições e testar as autenticações:
-- **Postman** - [Tutorial de instalação](https://www.postman.com/downloads/)
+- <img src="https://cdn.simpleicons.org/postman/FF6C37/FF6C37?viewbox=auto" width=24>&nbsp; **Postman** - [Tutorial de instalação](https://www.postman.com/downloads/)
 
 > [!tip]
 > Também é possível fazer requisições pela linha de comando.  
@@ -72,7 +72,7 @@ git clone https://github.com/henrygoncalvess/Authentications.git
 
 <br>
 
-### Etapas
+### Configuração do Projeto
 
 #### 1. crie seu projeto Node.js
 
